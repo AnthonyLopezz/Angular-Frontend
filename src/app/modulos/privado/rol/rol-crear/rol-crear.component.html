@@ -1,0 +1,54 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="pt-3 pb-2 border-bottom">
+    <h1>Crear Role</h1>
+  </div>
+  <div class="col-md-12 col-lg-12 mt-4">
+    <form
+      #frmLogin="ngForm"
+      (submit)="frmLogin.form.valid && operaciones(frmLogin)"
+      novalidate
+    >
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="nombreRol" class="form-label">Nombre del Role</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreRol"
+            name="nombreRol"
+            [(ngModel)]="objRole.nombreRol"
+            [ngClass]="{
+              'is-invalid': frmLogin.submitted && nom.invalid
+            }"
+            #nom="ngModel"
+            required
+          />
+          <div class="invalid-feedback" for="nombreRol">Role name is required.</div>
+        </div>
+
+        <div class="col-md-5">
+          <label for="estadoRol" class="form-label">Status</label>
+          <select
+            class="form-select"
+            id="estadoRol"
+            name="estadoRol"
+            [(ngModel)]="objRole.estadoRol"
+            [ngClass]="{ 'is-invalid': frmLogin.submitted && sta.invalid }"
+            #sta="ngModel"
+            required
+          >
+            <option value=1>Activo</option>
+            <option value=2>Inactivo</option>
+          </select>
+          <div class="invalid-feedback" for="estadoRol">Please select a status.</div>
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <button class="w-25 btn btn-primary btn-lg" type="submit">
+        Crear Role
+      </button>
+    </form>
+  </div>
+</main>
