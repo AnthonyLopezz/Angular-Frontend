@@ -9,6 +9,7 @@ npm i bootstrap-icons
 npm i ngx-pagination
 npm i js-sha512
 npm i @popperjs/core
+npm i jwt-decode
 
 # Copy the images to the assets folder Route: src/assets
 --------------------------------------
@@ -598,3 +599,11 @@ ng g c modules/public/registro
 
 
 
+
+
+-> Security
+ ng g class modelos/miSession  
+
+ Packages to manipulate the session token
+
+ check new code from iniciarSesion service

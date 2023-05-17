@@ -19,7 +19,7 @@
         <td class="align-middle">
           <small> {{ obj.nombreRol }} <br /></small>
         </td>
-        <td class="align-middle" *ngIf="obj.estadoRol == 1; then thenBlock; else elseBlock">
+        <td class="align-middle text-center" *ngIf="obj.estadoRol == 1; then thenBlock; else elseBlock">
           <small> {{ obj.estadoRol }} <br /></small>
         </td>
         <ng-template #thenBlock
