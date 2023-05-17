@@ -17,26 +17,20 @@ export class RoleService {
   constructor(private http: HttpClient) {}
 
   public obtener(): Observable<Rol[]> {
-    const bearer = 'Bearer ' + String(localStorage.getItem('token_usta'));
-    const datos = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-        authorization: bearer,
-      },
-    };
-    return this.http.get<Rol[]>(this.apiGetRole + '/all', datos);
+    // const bearer = 'Bearer ' + String(localStorage.getItem('token_usta'));
+    // const datos = {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json; charset=UTF-8',
+    //     authorization: bearer,
+    //   },
+    // };
+
+    // datos en el return
+    return this.http.get<Rol[]>(this.apiGetRole + '/all');
   }
 
   public crear(objRol: Rol): Observable<Rol> {
-    const bearer = 'Bearer ' + String(localStorage.getItem('token_usta'));
-    const datos = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-        authorization: bearer,
-      },
-    };
-    return this.http.post<Rol>(this.apiAddRole, objRol, datos);
+    return this.http.post<Rol>(this.apiAddRole, objRol );
   }
 }

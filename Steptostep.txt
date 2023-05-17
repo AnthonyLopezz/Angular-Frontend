@@ -607,3 +607,10 @@ ng g c modules/public/registro
  Packages to manipulate the session token
 
  check new code from iniciarSesion service
+
+ -> Create a Guard
+
+ ng g guard vigilante --skip-tests=true -> CanActivate
+
+ -> Interceptor
+ ng g interceptor token --skip-tests=true

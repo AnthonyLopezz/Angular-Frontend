@@ -35,7 +35,7 @@ export class RolAdminComponent implements OnInit, OnDestroy {
     this.subscription = this.service
       .obtener()
       .pipe(
-        map((respuesta: any) => {
+        map((respuesta) => {
           console.log(respuesta);
           this.arrRole = respuesta;
         }),

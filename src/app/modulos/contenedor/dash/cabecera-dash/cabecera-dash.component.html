@@ -11,7 +11,7 @@
       <a
         class="col-md-3 col-lg-2 me-0 px-2 fs-4 text-black"
         [routerLink]="['/private/dash']"
-        >Mi Corralito</a
+        >{{objMiSesion.nombresMiSesion}}</a
       >
     </h3>
   </div>
@@ -29,8 +29,8 @@
 
   <div class="navbar-nav">
     <div class="nav-item">
-      <a class="nav-link px-3 text-black" (click)="session.salir()"
-        >Cerrar sesión</a
+      <a class="nav-link px-3 text-black miCursor" (click)="sessionService.salir()"
+        ><button class="btn btn-light">Cerrar Sesión</button></a
       >
     </div>
   </div>
