@@ -1,0 +1,29 @@
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.overflow-string {
+  /* Not supported in most browsers,
+     see the 'Browser compatibility' section below */
+  text-overflow: " [..]";
+}
+
+td {
+  width: 200px;
+  padding: 2px 5px;
+
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}

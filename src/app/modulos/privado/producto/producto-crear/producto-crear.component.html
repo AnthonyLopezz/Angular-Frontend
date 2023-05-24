@@ -1,0 +1,110 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  
+  <div class="pt-3 pb-2 border-bottom">
+    <h1>Crear producto</h1>
+  </div>
+  <form
+    class="row g-3 mt-4"
+    #frmLogin="ngForm"
+    (submit)="frmLogin.form.valid && operations(frmLogin)"
+    novalidate
+  >
+    <div class="col-md-4">
+      <label for="nam" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nam"
+        name="nam"
+        [(ngModel)]="objProd.nombreProducto"
+        [ngClass]="{
+          'is-invalid': frmLogin.submitted && nam.invalid
+        }"
+        #nam="ngModel"
+        required
+      />
+      <div class="valid-feedback" for="nam">Looks good!</div>
+    </div>
+    <div class="col-md-4">
+      <label for="det" class="form-label">Detalle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="det"
+        name="det"
+        [(ngModel)]="objProd.detalleProducto"
+        [ngClass]="{
+          'is-invalid': frmLogin.submitted && det.invalid
+        }"
+        #det="ngModel"
+        required
+      />
+      <div class="valid-feedback" for="det">Looks good!</div>
+    </div>
+    <div class="col-md-4">
+      <label for="val" class="form-label">Valor</label>
+      <input
+        type="number"
+        class="form-control"
+        id="val"
+        name="val"
+        [(ngModel)]="objProd.valorProducto"
+        [ngClass]="{
+          'is-invalid': frmLogin.submitted && val.invalid
+        }"
+        #val="ngModel"
+        required
+      />
+      <div class="valid-feedback" for="val">Looks good!</div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="d-flex"><label for="publPhoto" class="form-label">Foto Pública </label>
+        <p class="text-success">&nbsp; Read Only</p></div>
+      <input
+        type="text"
+        class="form-control"
+        id="publPhoto"
+        name="publPhoto"
+        [(ngModel)]="objProd.publicoFotoProducto"
+        [ngClass]="{'is-invalid': frmLogin.submitted && pub.oninvalid}"
+        #pub
+        [value]="privPhoto"
+        readonly
+      />
+      <div id="publPhoto" class="invalid-feedback">
+        Please provide a valid Foto Privada.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="privPhoto" class="form-label">Foto Privada</label>
+      <input
+        type="file"
+        class="form-control"
+        id="privPhoto"
+        name="privPhoto"
+        value="img"
+        [(ngModel)]="objProd.privadoFotoProducto"
+        [ngClass]="{'is-invalid': frmLogin.submitted && photoInput.oninvalid}"
+        (change)="showFileName($event)" 
+        (change)="onPhotoSelected($event)"
+        #photoInput
+      />
+    </div>
+    <label for="">Image Preview</label>
+    <div class="col-md-6">
+      <img
+        [src]="tmpBase64 || '../../../../../assets/images/noDisponible.png'"
+        class="img-fluid"
+        style="width: 250px; height: auto"
+        alt="No Image"
+        (click)="photoInput.click()"
+      />
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Agregar</button>
+    </div>
+  </form>
+</main>
+

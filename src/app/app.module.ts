@@ -27,6 +27,7 @@ import { TokenInterceptor } from './token.interceptor';
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    NgxPaginationModule,
 
     ContenedorModule,
   ],

@@ -9,5 +9,6 @@ export const API_REGISTRAR_USUARIO = API_URL + 'api/public/register';
 
 // Servicios privados
 export const API_ROLE = API_URL + 'api/private/role';
+export const API_PRODUCTO = API_URL + 'api/private/product';
 
 // Pendiente

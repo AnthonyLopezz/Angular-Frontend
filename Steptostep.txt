@@ -602,15 +602,44 @@ ng g c modules/public/registro
 
 
 -> Security
- ng g class modelos/miSession  
+ng g class modelos/miSession  
 
- Packages to manipulate the session token
+Packages to manipulate the session token
 
- check new code from iniciarSesion service
+check new code from iniciarSesion service
 
- -> Create a Guard
+-> Create a Guard
 
- ng g guard vigilante --skip-tests=true -> CanActivate
+ng g guard vigilante --skip-tests=true -> CanActivate
 
- -> Interceptor
- ng g interceptor token --skip-tests=true
+-> Interceptor
+ng g interceptor token --skip-tests=true
+
+
+-- Final test --
+-> Products CRUD
+
+-> Create Model
+
+ng g class modelos/producto --skip-tests=true  ok!
+
+-> Create service
+ng g service servicios/ProductoServicio --skip-tests=true  ok!
+
+-> Create endpoint
+
+Ok!
+
+-> Create private module, product module and product routing module
+
+ng g m modulos/privado/producto
+ng g m modulos/privado/producto/producto-routing --flat --module=producto
+
+ng g c modulos/privado/producto/productoCrear
+ng g c modulos/privado/producto/productoEditar
+ng g c modulos/privado/producto/productoAdmin
+
+
+OK!
+
+-> 

@@ -1,3 +1,4 @@
+import { ProductoModule } from './../../modulos/privado/producto/producto.module';
 import { ErrorInternoComponent } from 'src/app/modulos/privado/control/error-interno/error-interno.component';
 import { ControlModule } from './../../modulos/privado/control/control.module';
 import { Routes } from '@angular/router';
@@ -16,6 +17,13 @@ export const RUTAS_DASHBOARD: Routes = [
     path: 'role',
     loadChildren: () =>
       import('../../modulos/privado/rol/rol.module').then((m) => m.RolModule),
+  },
+
+  // Ruteo para productos
+  {
+    path: 'product',
+    loadChildren: () =>
+      import('../../modulos/privado/producto/producto.module').then((m) => m.ProductoModule),
   },
 
   // Ruteo para restaurante
